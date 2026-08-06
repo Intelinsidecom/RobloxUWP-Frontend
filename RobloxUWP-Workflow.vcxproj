@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4f5f6727-7c9e-4847-b1eb-624cf55f39a4}</ProjectGuid>
+    <RootNamespace>Roblox</RootNamespace>
+    <DefaultLanguage>en</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <WindowsTargetPlatformVersion>10.0.10586.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.10240.0</WindowsTargetPlatformMinVersion>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <ProjectName>Win10Universal</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <PackageCertificateKeyFile>RobloxUWP_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86</AppxBundlePlatforms>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>$(GeneratedFilesDir)\Screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Components\DatePicker.xaml.h">
+      <DependentUpon>Components\DatePicker.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Components\WebView.xaml.h">
+      <DependentUpon>Components\WebView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Components\NavMenuItem.xaml.h">
+      <DependentUpon>Components\NavMenuItem.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Components\NavMenu.xaml.h">
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="Components\WebViewPage.xaml.h">
+      <DependentUpon>Components\WebViewPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Components\GameView.xaml.h">
+      <DependentUpon>Components\GameView.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Components\GameParameters.h" />
+    <ClInclude Include="Components\InputManager.h" />
+    <ClInclude Include="Components\GameClosedEventHandler.h" />
+    <ClInclude Include="Components\DateChangedHandler.h" />
+    <ClInclude Include="Roblox\CloseLandingPageShowAppShell.h" />
+    <ClInclude Include="Roblox\OnNavigationCompletedHandler.h" />
+    <ClInclude Include="Roblox\OnNavigationStartingHandler.h" />
+    <ClInclude Include="Roblox\StorePurchaseCallback.h" />
+    <ClInclude Include="Roblox\UpgradeStatus.h" />
+    <ClInclude Include="Roblox\UpgradeCallback.h" />
+    <ClInclude Include="Roblox.NativeHybrid\Bridge.h" />
+    <ClInclude Include="Roblox.NativeHybrid\Command.h" />
+    <ClInclude Include="Roblox.NativeHybrid\Module.h" />
+    <ClInclude Include="Roblox.NativeHybrid\ModuleFunction.h" />
+    <ClInclude Include="Roblox.NativeHybrid\GameModule.h" />
+    <ClInclude Include="Roblox.NativeHybrid\SocialModule.h" />
+    <ClInclude Include="Roblox.Rendering\CubeRenderer.h" />
+    <ClInclude Include="Components\Page.h">
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="Components\RobloxTheme.h">
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="Components\SearchType.h">
+      <SubType>Code</SubType>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Roblox\RobloxSettings.h" />
+    <ClInclude Include="Roblox\AuthStorage.h" />
+    <ClInclude Include="Roblox\NoInternetDialog.h" />
+    <ClInclude Include="Roblox\ResourceStrings.h" />
+    <ClInclude Include="Services\StoreService.h" />
+    <ClInclude Include="Screens\LandingPage.xaml.h">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\CaptchaModal.xaml.h">
+      <DependentUpon>Screens\CaptchaModal.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\LoginPage.xaml.h">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\RbxSplashScreen.xaml.h">
+      <DependentUpon>RbxSplashScreen.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\SignupPage.xaml.h">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\AppShell.xaml.h">
+      <DependentUpon>Screens\AppShell.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\HomePage.xaml.h">
+      <DependentUpon>Screens\HomePage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\GamesPage.xaml.h">
+      <DependentUpon>Screens\GamesPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\GamePage.xaml.h">
+      <DependentUpon>Screens\GamePage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\FriendsPage.xaml.h">
+      <DependentUpon>Screens\FriendsPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\CatalogPage.xaml.h">
+      <DependentUpon>Screens\CatalogPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\MessagesPage.xaml.h">
+      <DependentUpon>Screens\MessagesPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\ProfilePage.xaml.h">
+      <DependentUpon>Screens\ProfilePage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\CharacterPage.xaml.h">
+      <DependentUpon>Screens\CharacterPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\InventoryPage.xaml.h">
+      <DependentUpon>Screens\InventoryPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\TradePage.xaml.h">
+      <DependentUpon>Screens\TradePage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\GroupsPage.xaml.h">
+      <DependentUpon>Screens\GroupsPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\ForumPage.xaml.h">
+      <DependentUpon>Screens\ForumPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\SettingsPage.xaml.h">
+      <DependentUpon>Screens\SettingsPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\HelpPage.xaml.h">
+      <DependentUpon>Screens\HelpPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\PurchaseBCPage.xaml.h">
+      <DependentUpon>Screens\PurchaseBCPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Screens\PurchaseRobuxPage.xaml.h">
+      <DependentUpon>Screens\PurchaseRobuxPage.xaml</DependentUpon>
+    </ClInclude>
+    <ClInclude Include="Roblox\OnCaptchaSolved.h" />
+    <ClInclude Include="Services\SignupService.h" />
+    <ClInclude Include="Services\AnalyticsService.h" />
+    <ClInclude Include="Services\LoginService.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Colors.xaml" />
+    <Page Include="Components\DatePicker.xaml" />
+    <Page Include="Components\WebView.xaml" />
+    <Page Include="Components\NavMenuItem.xaml" />
+    <Page Include="Components\WebViewPage.xaml" />
+    <Page Include="Components\GameView.xaml" />
+    <Page Include="Screens\CaptchaModal.xaml" />
+    <Page Include="Screens\LandingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\LoginPage.xaml" />
+    <Page Include="Screens\RbxSplashScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\SignupPage.xaml" />
+    <Page Include="Screens\AppShell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\GamesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\GamePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\FriendsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\CatalogPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\MessagesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\CharacterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\InventoryPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\TradePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\GroupsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\ForumPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\HelpPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Screens\PurchaseBCPage.xaml" />
+    <Page Include="Screens\PurchaseRobuxPage.xaml" />
+    <Page Include="Styles.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="RobloxUWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-100.png" />
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-125.png" />
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-150.png" />
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-200.png" />
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-400.png" />
+    <Image Include="Assets\LandingPage\home_bkg.png" />
+    <Image Include="Assets\LandingPage\roblox_logo_red.png" />
+    <Image Include="Assets\Logo.scale-100.png" />
+    <Image Include="Assets\Shell\cancelButton.png" />
+    <Image Include="Assets\Shell\icon_BC.png" />
+    <Image Include="Assets\Shell\icon_BC_on.png" />
+    <Image Include="Assets\Shell\icon_blog.png" />
+    <Image Include="Assets\Shell\icon_blog_on.png" />
+    <Image Include="Assets\Shell\icon_catalog.png" />
+    <Image Include="Assets\Shell\icon_catalog_on.png" />
+    <Image Include="Assets\Shell\icon_character.png" />
+    <Image Include="Assets\Shell\icon_character_on.png" />
+    <Image Include="Assets\Shell\icon_forum.png" />
+    <Image Include="Assets\Shell\icon_forum_on.png" />
+    <Image Include="Assets\Shell\icon_friends.png" />
+    <Image Include="Assets\Shell\icon_friends_on.png" />
+    <Image Include="Assets\Shell\icon_game.png" />
+    <Image Include="Assets\Shell\icon_game_on.png" />
+    <Image Include="Assets\Shell\icon_groups.png" />
+    <Image Include="Assets\Shell\icon_groups_on.png" />
+    <Image Include="Assets\Shell\icon_help.png" />
+    <Image Include="Assets\Shell\icon_help_on.png" />
+    <Image Include="Assets\Shell\icon_home.png" />
+    <Image Include="Assets\Shell\icon_home_on.png" />
+    <Image Include="Assets\Shell\icon_inventory.png" />
+    <Image Include="Assets\Shell\icon_inventory_on.png" />
+    <Image Include="Assets\Shell\icon_logout.png" />
+    <Image Include="Assets\Shell\icon_messages.png" />
+    <Image Include="Assets\Shell\icon_messages_on.png" />
+    <Image Include="Assets\Shell\icon_profile.png" />
+    <Image Include="Assets\Shell\icon_profile_on.png" />
+    <Image Include="Assets\Shell\icon_ROBUX.png" />
+    <Image Include="Assets\Shell\icon_ROBUX_on.png" />
+    <Image Include="Assets\Shell\icon_settings.png" />
+    <Image Include="Assets\Shell\icon_settings_on.png" />
+    <Image Include="Assets\Shell\icon_trade.png" />
+    <Image Include="Assets\Shell\icon_trade_on.png" />
+    <Image Include="Assets\Splash.scale-100.png" />
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-100.png" />
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-125.png" />
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-150.png" />
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-200.png" />
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-400.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-16_altform-unplated.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-24_altform-unplated.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-256_altform-unplated.png" />
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-48_altform-unplated.png" />
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-100.png" />
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-125.png" />
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-150.png" />
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-200.png" />
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp">
+      <DependentUpon>App.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\DatePicker.xaml.cpp">
+      <DependentUpon>Components\DatePicker.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\WebView.xaml.cpp">
+      <DependentUpon>Components\WebView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\NavMenuItem.xaml.cpp">
+      <DependentUpon>Components\NavMenuItem.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\NavMenu.xaml.cpp" />
+    <ClCompile Include="Components\WebViewPage.xaml.cpp">
+      <DependentUpon>Components\WebViewPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\GameView.xaml.cpp">
+      <DependentUpon>Components\GameView.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Components\GameParameters.cpp" />
+    <ClCompile Include="Components\InputManager.cpp" />
+    <ClCompile Include="Components\Page.cpp" />
+    <ClCompile Include="Roblox\RobloxSettings.cpp" />
+    <ClCompile Include="Roblox\AuthStorage.cpp" />
+    <ClCompile Include="Roblox\NoInternetDialog.cpp" />
+    <ClCompile Include="Screens\LandingPage.xaml.cpp">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\LoginPage.xaml.cpp">
+      <DependentUpon>Screens\LoginPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\CaptchaModal.xaml.cpp">
+      <DependentUpon>Screens\CaptchaModal.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\RbxSplashScreen.xaml.cpp">
+      <DependentUpon>RbxSplashScreen.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Screens\SignupPage.xaml.cpp">
+      <DependentUpon>Screens\SignupPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\AppShell.xaml.cpp">
+      <DependentUpon>Screens\AppShell.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\HomePage.xaml.cpp">
+      <DependentUpon>Screens\HomePage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\GamesPage.xaml.cpp">
+      <DependentUpon>Screens\GamesPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\GamePage.xaml.cpp">
+      <DependentUpon>Screens\GamePage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\FriendsPage.xaml.cpp">
+      <DependentUpon>Screens\FriendsPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\CatalogPage.xaml.cpp">
+      <DependentUpon>Screens\CatalogPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\MessagesPage.xaml.cpp">
+      <DependentUpon>Screens\MessagesPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\ProfilePage.xaml.cpp">
+      <DependentUpon>Screens\ProfilePage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\CharacterPage.xaml.cpp">
+      <DependentUpon>Screens\CharacterPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\InventoryPage.xaml.cpp">
+      <DependentUpon>Screens\InventoryPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\TradePage.xaml.cpp">
+      <DependentUpon>Screens\TradePage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\GroupsPage.xaml.cpp">
+      <DependentUpon>Screens\GroupsPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\ForumPage.xaml.cpp">
+      <DependentUpon>Screens\ForumPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\SettingsPage.xaml.cpp">
+      <DependentUpon>Screens\SettingsPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\HelpPage.xaml.cpp">
+      <DependentUpon>Screens\HelpPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\PurchaseBCPage.xaml.cpp">
+      <DependentUpon>Screens\PurchaseBCPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Screens\PurchaseRobuxPage.xaml.cpp">
+      <DependentUpon>Screens\PurchaseRobuxPage.xaml</DependentUpon>
+    </ClCompile>
+    <ClCompile Include="Services\SignupService.cpp" />
+    <ClCompile Include="Services\AnalyticsService.cpp" />
+    <ClCompile Include="Services\LoginService.cpp" />
+    <ClCompile Include="Services\StoreService.cpp" />
+    <ClCompile Include="Roblox.NativeHybrid\Bridge.cpp" />
+    <ClCompile Include="Roblox.NativeHybrid\Command.cpp" />
+    <ClCompile Include="Roblox.NativeHybrid\Module.cpp" />
+    <ClCompile Include="Roblox.NativeHybrid\GameModule.cpp" />
+    <ClCompile Include="Roblox.NativeHybrid\SocialModule.cpp" />
+    <ClCompile Include="Roblox.Rendering\CubeRenderer.cpp" />
+  </ItemGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>d3d11.lib;dxgi.lib;d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile>
+      <FavorSizeOrSpeed Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Neither</FavorSizeOrSpeed>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <PRIResource Include="resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Managers\Debug-WindowsStoreProxy.xml" />
+    <Xml Include="RobloxCommandSet.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
