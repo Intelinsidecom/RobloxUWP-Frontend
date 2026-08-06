@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>7718336e-afcc-467c-9883-3d0e35b14597</UniqueIdentifier>
+      <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
+    </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{a1bb0a3f-1234-4d1b-a4ed-64664c0a7f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Roblox">
+      <UniqueIdentifier>{03011581-d402-41e4-aaa8-0d4c0291956b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{bc6d2bb1-6a0d-4dd1-8ef0-f4938af34171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{7fc75976-0b68-48d6-9594-3d240b7776f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Shell">
+      <UniqueIdentifier>{db0550c5-913e-40dc-b0cc-25022031c3d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NativeHybrid">
+      <UniqueIdentifier>{464f01f5-67ea-470c-bad1-e87592babfda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\BadgeLogo">
+      <UniqueIdentifier>{ef0de891-d76a-4123-9562-e4e61f69e214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\LandingPage">
+      <UniqueIdentifier>{4c9d9ceb-9f12-427e-83e2-d79731258189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\SplashScreen">
+      <UniqueIdentifier>{4296b96d-c754-4cc8-8fb9-03dc636037e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Tiles">
+      <UniqueIdentifier>{43e24753-e2f0-45d0-bed6-e394a4c5b37c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Managers">
+      <UniqueIdentifier>{ad0e4f3b-94d8-4db8-abc9-38a2ceec676b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3D">
+      <UniqueIdentifier>{563b484d-0f03-4527-8766-70fbe944b745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controls">
+      <UniqueIdentifier>{ae39f7a5-4911-4e12-87f0-cfc00d6f89b9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.xaml.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Screens\LandingPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\RbxSplashScreen.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox\RobloxSettings.cpp">
+      <Filter>Roblox</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox\AuthStorage.cpp">
+      <Filter>Roblox</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox\NoInternetDialog.cpp">
+      <Filter>Roblox</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\SignupService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\DatePicker.xaml.cpp" />
+    <ClCompile Include="Components\WebView.xaml.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\NavMenuItem.xaml.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\NavMenu.xaml.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\WebViewPage.xaml.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Page.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\LoginPage.xaml.cpp" />
+    <ClCompile Include="Screens\SignupPage.xaml.cpp" />
+    <ClCompile Include="Screens\CaptchaModal.xaml.cpp" />
+    <ClCompile Include="Screens\AppShell.xaml.cpp" />
+    <ClCompile Include="Screens\HomePage.xaml.cpp" />
+    <ClCompile Include="Screens\GamesPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\FriendsPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\CatalogPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\MessagesPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\ProfilePage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\CharacterPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\InventoryPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\TradePage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\GroupsPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\ForumPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\SettingsPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\HelpPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\PurchaseBCPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\PurchaseRobuxPage.xaml.cpp">
+      <Filter>Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\StoreService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\GameView.xaml.cpp" />
+    <ClCompile Include="Screens\GamePage.xaml.cpp" />
+    <ClCompile Include="Services\AnalyticsService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.NativeHybrid\Bridge.cpp">
+      <Filter>NativeHybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.NativeHybrid\Command.cpp">
+      <Filter>NativeHybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.NativeHybrid\GameModule.cpp">
+      <Filter>NativeHybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.Rendering\CubeRenderer.cpp">
+      <Filter>3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\GameParameters.cpp">
+      <Filter>Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.NativeHybrid\SocialModule.cpp">
+      <Filter>NativeHybrid</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\InputManager.cpp">
+      <Filter>Roblox</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\LoginService.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Roblox.NativeHybrid\Module.cpp">
+      <Filter>NativeHybrid</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="App.xaml.h" />
+    <ClInclude Include="Screens\LandingPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\RbxSplashScreen.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\RobloxSettings.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\AuthStorage.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\NoInternetDialog.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\SignupService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\StoreService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\DatePicker.xaml.h" />
+    <ClInclude Include="Components\WebView.xaml.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\NavMenu.xaml.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\WebViewPage.xaml.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Page.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\CaptchaModal.xaml.h" />
+    <ClInclude Include="Screens\AppShell.xaml.h" />
+    <ClInclude Include="Screens\HomePage.xaml.h" />
+    <ClInclude Include="Screens\GamesPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\FriendsPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\CatalogPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\MessagesPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\ProfilePage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\CharacterPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\InventoryPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\TradePage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\GroupsPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\ForumPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\SettingsPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\HelpPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\PurchaseBCPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\PurchaseRobuxPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\NavMenuItem.xaml.h" />
+    <ClInclude Include="Components\GameView.xaml.h" />
+    <ClInclude Include="Screens\GamePage.xaml.h" />
+    <ClInclude Include="Services\AnalyticsService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\Bridge.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\Command.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\GameModule.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.Rendering\CubeRenderer.h">
+      <Filter>3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\DateChangedHandler.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\GameClosedEventHandler.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\GameParameters.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\RobloxTheme.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\SearchType.h">
+      <Filter>Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\UpgradeCallback.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\UpgradeStatus.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\StorePurchaseCallback.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\SocialModule.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\SignupPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\InputManager.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\LoginPage.xaml.h">
+      <Filter>Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\LoginService.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\Module.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox.NativeHybrid\ModuleFunction.h">
+      <Filter>NativeHybrid</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\OnCaptchaSolved.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\ResourceStrings.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\CloseLandingPageShowAppShell.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\OnNavigationCompletedHandler.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+    <ClInclude Include="Roblox\OnNavigationStartingHandler.h">
+      <Filter>Roblox</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Shell\cancelButton.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_BC.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_BC_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_blog.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_blog_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_catalog.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_catalog_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_character.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_character_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_forum.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_forum_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_friends.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_friends_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_game.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_game_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_groups.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_groups_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_help.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_help_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_home.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_home_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_inventory.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_inventory_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_logout.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_messages.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_messages_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_profile.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_profile_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_ROBUX.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_ROBUX_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_settings.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_settings_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_trade.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\Shell\icon_trade_on.png">
+      <Filter>Assets\Shell</Filter>
+    </Image>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-100.png">
+      <Filter>Assets\BadgeLogo</Filter>
+    </Image>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-125.png">
+      <Filter>Assets\BadgeLogo</Filter>
+    </Image>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-150.png">
+      <Filter>Assets\BadgeLogo</Filter>
+    </Image>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-200.png">
+      <Filter>Assets\BadgeLogo</Filter>
+    </Image>
+    <Image Include="Assets\BadgeLogo\RobloxBadge24x24.scale-400.png">
+      <Filter>Assets\BadgeLogo</Filter>
+    </Image>
+    <Image Include="Assets\LandingPage\home_bkg.png">
+      <Filter>Assets\LandingPage</Filter>
+    </Image>
+    <Image Include="Assets\LandingPage\roblox_logo_red.png">
+      <Filter>Assets\LandingPage</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-100.png">
+      <Filter>Assets\SplashScreen</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-125.png">
+      <Filter>Assets\SplashScreen</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-150.png">
+      <Filter>Assets\SplashScreen</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-200.png">
+      <Filter>Assets\SplashScreen</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen\RobloxSplash620x300.scale-400.png">
+      <Filter>Assets\SplashScreen</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxStoreLogo50x50.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-16_altform-unplated.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-24_altform-unplated.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-48_altform-unplated.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile44x44.targetsize-256_altform-unplated.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile71x71.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile150x150.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x150.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-100.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-125.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-150.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-200.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Tiles\RobloxTile310x310.scale-400.png">
+      <Filter>Assets\Tiles</Filter>
+    </Image>
+    <Image Include="Assets\Logo.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Splash.scale-100.png">
+      <Filter>Assets</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RobloxUWP_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Screens\LandingPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\RbxSplashScreen.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Components\DatePicker.xaml">
+      <Filter>Components</Filter>
+    </Page>
+    <Page Include="Components\WebView.xaml">
+      <Filter>Components</Filter>
+    </Page>
+    <Page Include="Components\WebViewPage.xaml">
+      <Filter>Components</Filter>
+    </Page>
+    <Page Include="Screens\LoginPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\SignupPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Colors.xaml" />
+    <Page Include="Styles.xaml" />
+    <Page Include="Screens\CaptchaModal.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\GamesPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\FriendsPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\CatalogPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\MessagesPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\ProfilePage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\CharacterPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\InventoryPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\TradePage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\GroupsPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\ForumPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\SettingsPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\HelpPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\PurchaseBCPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\PurchaseRobuxPage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Components\GameView.xaml">
+      <Filter>Components</Filter>
+    </Page>
+    <Page Include="Screens\HomePage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\GamePage.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Screens\AppShell.xaml">
+      <Filter>Screens</Filter>
+    </Page>
+    <Page Include="Components\NavMenuItem.xaml">
+      <Filter>Components</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="RobloxCommandSet.xml" />
+    <Xml Include="Managers\Debug-WindowsStoreProxy.xml">
+      <Filter>Managers</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>
