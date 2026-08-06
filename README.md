@@ -12,4 +12,7 @@ A little project i thought of in like 2026/03 or 05, basically a remake of UWP f
 - Add branches for variants of specific year releases of UWP Clients (Later Clients have tons of differences)
 - Design a comfortable expierience for Mobile Users Too
 - Port to WinRT / Windows 8.1
-- Ensure everything is accurate 
+- Ensure everything is accurate
+
+## Notes:
+- For interesting reasons, wrong SDK changes how the app looks in some parts like modals, please install 10586 if you want 100% accuracy
