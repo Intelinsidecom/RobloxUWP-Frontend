@@ -31,7 +31,6 @@ namespace Roblox
             Platform::String^ sessionToken;
             bool isSignupInProgress;
 
-            Platform::String^ GetBaseUrl();
             void UpdateCookiesFromResponse(Windows::Web::Http::HttpResponseMessage^ response);
             void AddCookiesToRequest(Windows::Web::Http::HttpRequestMessage^ request);
         };

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "SignupService.h"
+#include "..\\Roblox\\RobloxSettings.h"
 
 using namespace Roblox::Services;
 using namespace Windows::Foundation;
@@ -13,11 +14,6 @@ SignupService::SignupService()
 {
     httpClient = ref new HttpClient();
     cookieJar = ref new Platform::Collections::Map<String^, String^>();
-}
-
-String^ SignupService::GetBaseUrl()
-{
-    return "https://api.gametest1.robloxlabs.com";
 }
 
 void SignupService::UpdateCookiesFromResponse(HttpResponseMessage^ response)
@@ -109,7 +105,7 @@ IAsyncOperation<String^>^ SignupService::ValidateUsernameAsync(String^ username)
     {
         try
         {
-            String^ url = GetBaseUrl() + "/signup/is-username-valid?username=" + Uri::EscapeComponent(username);
+            String^ url = Roblox::RobloxSettings::GetInstance()->UsernameValidationURL(Uri::EscapeComponent(username));
             HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Get, ref new Uri(url));
             AddCookiesToRequest(request);
 
@@ -136,7 +132,7 @@ IAsyncOperation<String^>^ SignupService::ValidatePasswordAsync(String^ password,
     {
         try
         {
-            String^ url = GetBaseUrl() + "/signup/is-password-valid?username=" + Uri::EscapeComponent(username) + "&password=" + Uri::EscapeComponent(password);
+            String^ url = Roblox::RobloxSettings::GetInstance()->PasswordValidationURL(Uri::EscapeComponent(username), Uri::EscapeComponent(password));
             HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Get, ref new Uri(url));
             AddCookiesToRequest(request);
 
@@ -163,7 +159,7 @@ IAsyncOperation<String^>^ SignupService::GetRecommendedUsernameAsync(String^ use
     {
         try
         {
-            String^ url = GetBaseUrl() + "/UserCheck/getrecommendedusername?usernameToTry=" + Uri::EscapeComponent(usernameToTry);
+            String^ url = Roblox::RobloxSettings::GetInstance()->UsernameSuggestionURL(Uri::EscapeComponent(usernameToTry));
             HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Get, ref new Uri(url));
             AddCookiesToRequest(request);
 
@@ -197,7 +193,7 @@ IAsyncOperation<String^>^ SignupService::BeginPlatformSignupAsync(String^ userna
 
         try
         {
-            String^ url = GetBaseUrl() + "/signup/v1";
+            String^ url = Roblox::RobloxSettings::GetInstance()->SignupV1URL();
             HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
 
             String^ formData = "username=" + Uri::EscapeComponent(username) +
@@ -241,7 +237,7 @@ IAsyncOperation<String^>^ SignupService::BeginPlatformSignupWithCaptchaAsync(Str
         isSignupInProgress = true;
         try
         {
-            String^ url = GetBaseUrl() + "/signup/captcha/validate";
+            String^ url = Roblox::RobloxSettings::GetInstance()->SignupCaptchaValidateURL();
             HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
 
             String^ formData =
@@ -284,7 +280,7 @@ IAsyncOperation<String^>^ SignupService::AcquireCaptchaTokenAsync()
     {
         try
         {
-            String^ url = GetBaseUrl() + "/captcha";
+            String^ url = Roblox::RobloxSettings::GetInstance()->CaptchaURL();
             HttpRequestMessage^ request =
                 ref new HttpRequestMessage(HttpMethod::Get, ref new Uri(url));
             AddCookiesToRequest(request);
@@ -329,16 +325,16 @@ IAsyncOperation<bool>^ SignupService::BeginAuthorizationAsync()
     {
         try
         {
-            String^ url = GetBaseUrl() + "/auth/begin";
-            HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
+            String^ url = Roblox::RobloxSettings::GetInstance()->GetBaseApiURL() + "/auth/begin";
+            HttpRequestMessage^ request =
+                ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
             AddCookiesToRequest(request);
-
-            HttpResponseMessage^ response = create_task(httpClient->SendRequestAsync(request)).get();
+            HttpResponseMessage^ response =
+                create_task(httpClient->SendRequestAsync(request)).get();
             UpdateCookiesFromResponse(response);
-
             return response->StatusCode == HttpStatusCode::Ok;
         }
-        catch (Exception^ ex)
+        catch (Exception^)
         {
             return false;
         }
@@ -351,23 +347,21 @@ IAsyncOperation<bool>^ SignupService::ServiceLoginAuthAsync(String^ username, St
     {
         try
         {
-            String^ url = GetBaseUrl() + "/accounts/serviceloginauth";
-            HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
-            
+            String^ url = Roblox::RobloxSettings::GetInstance()->GetBaseApiURL() + "/accounts/serviceloginauth";
+            HttpRequestMessage^ request =
+                ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
             String^ formData = "username=" + Uri::EscapeComponent(username) +
                              "&password=" + Uri::EscapeComponent(password);
-            
             request->Content = ref new HttpStringContent(formData);
-            request->Content->Headers->ContentType = ref new Windows::Web::Http::Headers::HttpMediaTypeHeaderValue("application/x-www-form-urlencoded");
-            
+            request->Content->Headers->ContentType =
+                ref new Windows::Web::Http::Headers::HttpMediaTypeHeaderValue("application/x-www-form-urlencoded");
             AddCookiesToRequest(request);
-
-            HttpResponseMessage^ response = create_task(httpClient->SendRequestAsync(request)).get();
+            HttpResponseMessage^ response =
+                create_task(httpClient->SendRequestAsync(request)).get();
             UpdateCookiesFromResponse(response);
-
             return response->StatusCode == HttpStatusCode::Ok;
         }
-        catch (Exception^ ex)
+        catch (Exception^)
         {
             return false;
         }
@@ -380,21 +374,20 @@ IAsyncOperation<String^>^ SignupService::IssueAuthSubTokenAsync()
     {
         try
         {
-            String^ url = GetBaseUrl() + "/issue_auth_sub_token";
-            HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
+            String^ url = Roblox::RobloxSettings::GetInstance()->GetBaseApiURL() + "/issue_auth_sub_token";
+            HttpRequestMessage^ request =
+                ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
             AddCookiesToRequest(request);
-
-            HttpResponseMessage^ response = create_task(httpClient->SendRequestAsync(request)).get();
+            HttpResponseMessage^ response =
+                create_task(httpClient->SendRequestAsync(request)).get();
             UpdateCookiesFromResponse(response);
-
             if (response->StatusCode == HttpStatusCode::Ok)
             {
-                String^ content = create_task(response->Content->ReadAsStringAsync()).get();
-                return content;
+                return create_task(response->Content->ReadAsStringAsync()).get();
             }
             return nullptr;
         }
-        catch (Exception^ ex)
+        catch (Exception^)
         {
             return nullptr;
         }
@@ -407,16 +400,16 @@ IAsyncOperation<bool>^ SignupService::AuthSubRequestAsync(String^ token)
     {
         try
         {
-            String^ url = GetBaseUrl() + "/auth_sub_request?token=" + Uri::EscapeComponent(token);
-            HttpRequestMessage^ request = ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
+            String^ url = Roblox::RobloxSettings::GetInstance()->GetBaseApiURL() + "/auth_sub_request?token=" + Uri::EscapeComponent(token);
+            HttpRequestMessage^ request =
+                ref new HttpRequestMessage(HttpMethod::Post, ref new Uri(url));
             AddCookiesToRequest(request);
-
-            HttpResponseMessage^ response = create_task(httpClient->SendRequestAsync(request)).get();
+            HttpResponseMessage^ response =
+                create_task(httpClient->SendRequestAsync(request)).get();
             UpdateCookiesFromResponse(response);
-
             return response->StatusCode == HttpStatusCode::Ok;
         }
-        catch (Exception^ ex)
+        catch (Exception^)
         {
             return false;
         }
