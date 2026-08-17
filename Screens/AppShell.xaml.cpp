@@ -34,7 +34,7 @@ using namespace Windows::UI::Core;
 using namespace Windows::UI::Popups;
 
 AppShell::AppShell()
-    : m_loginService(ref new LoginService())
+    : m_loginService(LoginService::GetInstance())
     , m_logoutInFlight(false)
     , m_initialSelectionDone(true)
     , m_homePage(nullptr)

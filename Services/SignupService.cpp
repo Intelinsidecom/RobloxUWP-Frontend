@@ -4,6 +4,7 @@
 
 using namespace Roblox::Services;
 using namespace Windows::Foundation;
+using namespace Windows::Foundation::Collections;
 using namespace Windows::Web::Http;
 using namespace Windows::Data::Json;
 using namespace Platform;
@@ -16,68 +17,93 @@ SignupService::SignupService()
     cookieJar = ref new Platform::Collections::Map<String^, String^>();
 }
 
+void SignupService::ParseSingleCookie(const std::wstring& cookieStr)
+{
+    size_t equalPos = cookieStr.find(L'=');
+    if (equalPos == std::wstring::npos) return;
+
+    std::wstring name = cookieStr.substr(0, equalPos);
+    std::wstring value = cookieStr.substr(equalPos + 1);
+
+    size_t start = name.find_first_not_of(L" \t\r\n");
+    if (start != std::wstring::npos) name = name.substr(start);
+    size_t end = name.find_last_not_of(L" \t\r\n");
+    if (end != std::wstring::npos) name = name.substr(0, end + 1);
+
+    start = value.find_first_not_of(L" \t\r\n");
+    if (start != std::wstring::npos) value = value.substr(start);
+    end = value.find_last_not_of(L" \t\r\n");
+    if (end != std::wstring::npos) value = value.substr(0, end + 1);
+
+    if (name.empty()) return;
+
+    Platform::String^ nameStr = ref new Platform::String(name.c_str());
+    Platform::String^ valueStr = ref new Platform::String(value.c_str());
+
+    cookieJar->Insert(nameStr, valueStr);
+
+    if (nameStr->Equals("X-CSRF-TOKEN"))
+    {
+        csrfToken = valueStr;
+    }
+}
+
 void SignupService::UpdateCookiesFromResponse(HttpResponseMessage^ response)
 {
-    if (response->Headers->HasKey("Set-Cookie"))
-    {
-        String^ cookieHeader = response->Headers->Lookup("Set-Cookie");
-        std::wstring cookieStr(cookieHeader->Data());
-        
-        size_t pos = 0;
-        size_t semicolonPos;
-        while ((semicolonPos = cookieStr.find(';', pos)) != std::wstring::npos)
-        {
-            std::wstring cookie = cookieStr.substr(pos, semicolonPos - pos);
-            
-            size_t equalPos = cookie.find('=');
-            if (equalPos != std::wstring::npos)
-            {
-                std::wstring name = cookie.substr(0, equalPos);
-                std::wstring value = cookie.substr(equalPos + 1);
-                
-                size_t start = name.find_first_not_of(L" \t\r\n");
-                if (start != std::wstring::npos) name = name.substr(start);
-                size_t end = name.find_last_not_of(L" \t\r\n");
-                if (end != std::wstring::npos) name = name.substr(0, end + 1);
-                
-                start = value.find_first_not_of(L" \t\r\n");
-                if (start != std::wstring::npos) value = value.substr(start);
-                end = value.find_last_not_of(L" \t\r\n");
-                if (end != std::wstring::npos) value = value.substr(0, end + 1);
-                
-                Platform::String^ nameStr = ref new Platform::String(name.c_str());
-                Platform::String^ valueStr = ref new Platform::String(value.c_str());
-                
-                cookieJar->Insert(nameStr, valueStr);
+    if (!response->Headers->HasKey("Set-Cookie")) return;
 
-                if (nameStr->Equals(".ROBLOSECURITY") || nameStr->Equals("X-CSRF-TOKEN"))
-                {
-                    csrfToken = valueStr;
-                }
-            }
-            pos = semicolonPos + 1;
-        }
-        
-        if (pos < cookieStr.length())
+    String^ raw = response->Headers->Lookup("Set-Cookie");
+    if (raw == nullptr || raw->IsEmpty()) return;
+
+    std::wstring combined(raw->Data());
+
+    size_t pos = 0;
+    while (pos < combined.size())
+    {
+        size_t nextCookie = std::wstring::npos;
+        size_t searchPos = pos;
+        while (searchPos < combined.size())
         {
-            std::wstring cookie = cookieStr.substr(pos);
-            size_t equalPos = cookie.find('=');
-            if (equalPos != std::wstring::npos)
+            size_t commaPos = combined.find(L", ", searchPos);
+            if (commaPos == std::wstring::npos) break;
+
+            size_t afterComma = commaPos + 2;
+            if (afterComma < combined.size())
             {
-                std::wstring name = cookie.substr(0, equalPos);
-                std::wstring value = cookie.substr(equalPos + 1);
-                
-                Platform::String^ nameStr = ref new Platform::String(name.c_str());
-                Platform::String^ valueStr = ref new Platform::String(value.c_str());
-                
-                cookieJar->Insert(nameStr, valueStr);
-                
-                if (nameStr->Equals(".ROBLOSECURITY") || nameStr->Equals("X-CSRF-TOKEN"))
+                wchar_t c = combined[afterComma];
+                if ((c >= L'A' && c <= L'Z') || (c >= L'a' && c <= L'z') ||
+                    (c >= L'0' && c <= L'9') || c == L'.' || c == L'_')
                 {
-                    csrfToken = valueStr;
+                    nextCookie = commaPos;
+                    break;
                 }
             }
+            searchPos = commaPos + 1;
         }
+
+        std::wstring entry;
+        if (nextCookie != std::wstring::npos)
+        {
+            entry = combined.substr(pos, nextCookie - pos);
+            pos = nextCookie + 2;
+        }
+        else
+        {
+            entry = combined.substr(pos);
+            pos = combined.size();
+        }
+
+        size_t start = entry.find_first_not_of(L" \t\r\n");
+        if (start == std::wstring::npos) continue;
+        entry = entry.substr(start);
+        size_t end2 = entry.find_last_not_of(L" \t\r\n");
+        if (end2 != std::wstring::npos) entry = entry.substr(0, end2 + 1);
+
+        size_t semi = entry.find(L';');
+        if (semi != std::wstring::npos)
+            entry = entry.substr(0, semi);
+
+        ParseSingleCookie(entry);
     }
 }
 
@@ -436,6 +462,11 @@ void SignupService::DeleteCookie(String^ name)
     {
         cookieJar->Remove(name);
     }
+}
+
+IMap<String^, String^>^ SignupService::GetAllCookies()
+{
+    return cookieJar;
 }
 
 void SignupService::ClearAllCookies()

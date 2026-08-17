@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Class="Roblox.Controls.WebViewPage">
     <UserControl.Content>
-        <Grid x:Name="pageBackground" Background="#FF000000">
+        <Grid x:Name="pageBackground" Background="#FF000000" IsTargetElement="True">
             <Grid.RowDefinitions>
                 <RowDefinition Height="48" />
                 <RowDefinition Height="*" />
@@ -25,8 +25,8 @@
                             FontWeight="Bold"
                             Foreground="#FFFFFFFF"
                             FontSize="17"
-                            Grid.Column="0" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                            Column="0" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Column="1">
                             <StackPanel.Children>
                                 <Button x:Name="btnBC"
                                     Width="50"
@@ -60,7 +60,7 @@
                                                     FontWeight="Bold"
                                                     FontSize="17"
                                                     Foreground="#FFFFFFFF"
-                                                    Visibility="Visible" />
+                                                    Visibility="Collapsed" />
                                             </StackPanel.Children>
                                         </StackPanel>
                                     </Button.Content>
@@ -81,7 +81,7 @@
                         </StackPanel>
                     </Grid.Children>
                 </Grid>
-                <controls:WebView x:Name="wvContent" TabIndex="1" Grid.Row="1" />
+                <controls:WebView x:Name="wvContent" TabIndex="1" Row="1" />
             </Grid.Children>
         </Grid>
     </UserControl.Content>

@@ -4,6 +4,7 @@
 #include "AppShell.xaml.h"
 #include "..\\Roblox\\OnCaptchaSolved.h"
 #include "..\\Roblox\\AuthStorage.h"
+#include "..\\Services\\LoginService.h"
 #include "Components/DatePicker.xaml.h"
 
 using namespace Roblox::Views;
@@ -291,7 +292,22 @@ SignupFailureReason SignupPage::FinalizeSignupSuccess(String^ signupResponse, St
         }
     }
 
-    String^ sessionCookie = signupService->GetCookie(".ROBLOSECURITY");
+    try
+    {
+        create_task(signupService->BeginAuthorizationAsync()).get();
+    }
+    catch (Platform::Exception^)
+    {
+    }
+
+    auto loginService = Roblox::Services::LoginService::GetInstance();
+    loginService->MergeCookies(signupService->GetAllCookies());
+
+    String^ sessionCookie = loginService->SessionToken();
+    if (sessionCookie == nullptr || sessionCookie->IsEmpty())
+    {
+        sessionCookie = signupService->GetCookie(".ROBLOSECURITY");
+    }
     if (sessionCookie == nullptr || sessionCookie->IsEmpty())
     {
         sessionCookie = Roblox::AuthStorage::SessionCookie();
